@@ -33,7 +33,7 @@ export default function Header(){
     <header className="topbar bg-color">
       <div className="container header-col">
         <Link to="/" className="logo-center" aria-label="Pradžia">
-          <img src="/img/REMAURA.png" alt="Akmenys" className="logo-img" />
+          <img src={norm('img/REMAURA.png')} alt="Akmenys" className="logo-img" />
         </Link>
 
         <div className="nav-row">
