@@ -14,7 +14,7 @@ export default function ProductCard({ p }) {
   const images = useMemo(() => {
     const arr = Array.isArray(p?.images) ? p.images.filter(Boolean) : [];
     return arr.length ? arr.slice(0, 3) : (p?.img ? [p.img] : []);
-  }, [p]);
+  }, [p, base]);
 
   useEffect(() => {
     if (!open) return;
@@ -52,7 +52,7 @@ export default function ProductCard({ p }) {
         tabIndex={0}
         onKeyDown={(e)=>{ if(e.key==='Enter' || e.key===' ') { e.preventDefault(); setOpen(true); }}}
       >
-        <img className="latest-media" src={p.img} alt={p.title} />
+        <img className="latest-media" src={norm(p.img)} alt={p.title} />
         <div className="latest-body">
           <h3 className="latest-title">{p.title}</h3>
           {p.color && <p className="latest-meta">{p.color}</p>}
